@@ -49,4 +49,8 @@ public class JournalEntry {   // @Document for mapping
     public void setContent(String content) {
         this.content = content;
     }
+
+    public Object getContent(Object o) {
+        return content;
+    }
 }
