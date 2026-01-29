@@ -2,6 +2,7 @@ package net.engineeringdigest.journalApp.entity;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -11,12 +12,11 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Document(collection = "journal_entries" )
-@Getter
-@Setter
+@Data
 public class JournalEntry {   // @Document for mapping
     @Id
     private ObjectId id;   //@Id for primary key
-
+    @NonNull
     private String title;
 
     private String content;
