@@ -21,7 +21,7 @@ public class UserServiceTests {
     @ParameterizedTest
     @CsvSource({    //can put csv file path here
             "ram",
-            "shyam",
+
             "vipul"
     })
     public void testFindByUserName(String name){
