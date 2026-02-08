@@ -1,5 +1,6 @@
 package net.engineeringdigest.journalApp.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import net.engineeringdigest.journalApp.entity.User;
 import net.engineeringdigest.journalApp.repository.UserRepository;
 import org.bson.types.ObjectId;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Slf4j
 public class UserService {
 
     @Autowired
@@ -22,7 +24,7 @@ public class UserService {
 
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    private static final Logger logger = LoggerFactory.getLogger(JournalEntryService.class);
+   // private static final Logger logger = LoggerFactory.getLogger(JournalEntryService.class);
 
 
     public void saveNewUser(User user){
@@ -31,11 +33,11 @@ public class UserService {
             user.setRoles(Arrays.asList("USER"));
             userRepository.save(user);
         }catch (Exception e){
-            logger.info("hahahahahahah");
-            logger.error("error occured : ", e);
-            logger.warn("hahahahahahah");
-            logger.debug("hahahahahahah");
-            logger.trace("hahahahahahah");
+            //logger.info("hahahahahahah");
+            log.error("error occured for {} : ",user.getUserName(), e);
+//            logger.warn("hahahahahahah");
+//            logger.debug("hahahahahahah");
+//            logger.trace("hahahahahahah");
         }
 
 
