@@ -33,11 +33,11 @@ public class UserService {
             user.setRoles(Arrays.asList("USER"));
             userRepository.save(user);
         }catch (Exception e){
-            //logger.info("hahahahahahah");
-            log.error("error occured for {} : ",user.getUserName(), e);
-//            logger.warn("hahahahahahah");
-//            logger.debug("hahahahahahah");
-//            logger.trace("hahahahahahah");
+            log.info("informatio");
+           // log.error("error occured for {} : ",user.getUserName(), e);
+            log.warn("warnmin");
+            log.debug("hahahahahahah");
+            log.trace("hahahahahahah");
         }
 
 
