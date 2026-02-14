@@ -14,7 +14,7 @@ public class UserRepositoryImplTests {
 
     @Test
     public void testSaveNewUser(){
-        userRepository.getUserForSA();
+        Assertions.assertNotNull(userRepository.getUserForSA());
     }
 
 }

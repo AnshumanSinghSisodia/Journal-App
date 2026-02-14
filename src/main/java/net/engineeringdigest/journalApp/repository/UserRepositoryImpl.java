@@ -16,7 +16,11 @@ public class UserRepositoryImpl  {
 
     public List<User> getUserForSA(){
         Query query=new Query();
-        query.addCriteria(Criteria.where("userName").is("vipul"));
+        //query.addCriteria(Criteria.where("email").exists(true));
+       // query.addCriteria(Criteria.where("email").ne(null).ne(""));
+
+        query.addCriteria(Criteria.where("email").regex(" \"^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$\""));
+        query.addCriteria(Criteria.where("sentimentAnalysis").exists(true));
 
 //        .is  equal
 //        .ne  not equal
