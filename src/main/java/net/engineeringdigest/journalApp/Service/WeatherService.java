@@ -2,6 +2,7 @@ package net.engineeringdigest.journalApp.Service;
 
 import net.engineeringdigest.journalApp.api.response.WeatherResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -9,7 +10,9 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class WeatherService {
-    private static final String apiKey="2345923790b1b303fe365bdac979dc3d";
+
+    @Value("${weather.api.key}")
+    private String apiKey;
 
     private static final String api="https://api.weatherstack.com/current?access_key=apiKey&query=CITY";
 
