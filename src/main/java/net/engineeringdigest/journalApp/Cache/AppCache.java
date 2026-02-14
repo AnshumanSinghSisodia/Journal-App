@@ -16,7 +16,7 @@ public class AppCache {
     private ConfigJournalAppRepository configJournalAppRepository;
 
     public Map<String,String> APP_CACHE ;
-
+    //cache
     @PostConstruct
     public void init(){
         APP_CACHE = new HashMap<>();
