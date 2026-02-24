@@ -1,6 +1,7 @@
 package net.engineeringdigest.journalApp.Controller;
 
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import net.engineeringdigest.journalApp.Service.UserService;
 import net.engineeringdigest.journalApp.Service.WeatherService;
 import net.engineeringdigest.journalApp.api.response.WeatherResponse;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@Tag(name = "User APIs", description = "Read, delete, update user")
 public class UserControllerV2 {
 
     @Autowired

@@ -1,5 +1,6 @@
 package net.engineeringdigest.journalApp.Controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import net.engineeringdigest.journalApp.Service.UserService;
 import net.engineeringdigest.journalApp.entity.User;
 import net.engineeringdigest.journalApp.utils.JwtUtil;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/public")
+@Tag(name = "Public APIs")
 public class PublicController {
 
     private static final Logger log = LoggerFactory.getLogger(PublicController.class);
